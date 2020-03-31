@@ -15,7 +15,7 @@ export default class App extends Component {
 
   componentDidMount() {
     fetch('http://api.open-notify.org/astros.json')
-    .then((response) => {return response.json()})
-    .then(({data}) => this.setState({peopleInSpace: data}))
+    .then(resp => resp.json())
+    .then(({people}) => this.setState({ peopleInSpace: people }))
   }
 }
